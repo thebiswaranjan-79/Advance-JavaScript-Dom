@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Capturing </title>
+</head>
+
+<style>
+    .outer {
+        height: 400px;
+        width: 400px;
+        padding: 30px;
+        background-color: grey;
+    }
+
+    .outer img {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+    
+        <button id="btn">
+            Click
+        </button>
+
+        <div class="outer" id="outer"> 
+            <img src="data:image/jpeg;base64,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" alt="Puppy" data-toggle="true" id="img">
+        </div>
+ 
+
+    <script>
+        let  img = document.getElementById("img");
+        console.log(img.getAttribute("data-toggle"));
+
+        img.addEventListener("click", (e) =>{
+            // when we click on the image the image display is none as it is the child of the div the div also receive th click event 
+
+            e.stopPropagation();
+            let toggle  = img.getAttribute("data-toggle");
+
+            if(toggle == "0"){
+                img.src = "https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg";
+                img.setAttribute("data-toggle", "1");
+            }else {
+                img.src = "https://wallpapers.com/images/hd/spiderman-on-building-p4ashmgeamn2mvkn.jpg";
+                img.setAttribute("data-toggle", "0");
+
+            }
+        });
+
+        let btn = document.getElementById("btn");
+        let div = document.getElementById("outer");
+
+        btn.addEventListener("click", () => {
+           
+            if (div.style.display !== 'none') {
+                div.style.display = 'none';
+            } else {
+                div.style.display = 'block';
+            }
+        });
+
+        div.addEventListener("click", () => {
+            console.log("Bubbling "); // it will print after capturing bcoz the capturing phase is false by default 
+        })
+        div.addEventListener("click", () => {
+            console.log("Capturing");// It execute 1st bcoz the capturing phase is true
+            if (div.style.padding == '60px') {
+                div.style.padding = '100px';
+            } else {
+                div.style.padding = '60px';
+            }
+        }, {capture:true})
+
+
+    </script>
+</body>
+</html>
