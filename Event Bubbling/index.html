@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling </title>
+</head>
+
+<style>
+    #div {
+        background-color: blue;
+        padding: 20px;
+    }
+</style>
+<body>
+
+    <script>
+        let d = document.getElementById("div");
+        d.addEventListener("click", () => {
+            console.log("Clicked")
+        });
+
+        let btn = document.getElementById("button");
+
+        btn.addEventListener("click", () =>{
+            console.log("Clicked Button")
+        });
+        // When I clicked on the button 1st it prent Clicked Button and then it prints Clicked and it is called Event Bubbling 
+    </script>
+</body>
+</html>
