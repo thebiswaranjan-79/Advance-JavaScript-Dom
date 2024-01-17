@@ -10,3 +10,4 @@
 2) Targeting
 3) Bubbling
 
+![tree](https://github.com/thebiswaranjan-79/Advance-JavaScript-Dom/assets/154582279/74cc9f7f-6c23-4f03-b637-9400e102878e)
